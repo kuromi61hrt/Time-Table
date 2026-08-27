@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "timetable-backend"
+version = "0.1.0"
+description = "Constraint-aware weekly theory timetable generator"
+requires-python = ">=3.11"
+
+[project.scripts]
+timetable-api = "timetable.api:main"
+timetable-export = "timetable.export:main"
+
+[tool.setuptools.packages.find]
+include = ["timetable*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

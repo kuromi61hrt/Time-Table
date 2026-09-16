@@ -85,7 +85,7 @@ export function normalizeRows(rows) {
     };
     if (subject.code || subject.name || subject.acronym) subjects.push(subject);
   }
-  const teachers = Object.fromEntries([...new Set(subjects.flatMap(s => extractTeacherNames(s.teacher)))].map(name => [name, { name, initials: name.split(/\s+/).map(part => part[0]).join('').slice(0, 3).toUpperCase(), unavailable: [], externalHours: {}, ccFor: [] }]));
+  const teachers = Object.fromEntries([...new Set(subjects.flatMap(s => extractTeacherNames(s.teacher)))].map(name => [name, { name, initials: name.split(/\s+/).map(part => part[0]).join('').slice(0, 3).toUpperCase(), unavailable: [], externalHours: {}, hodFor: [], ccFor: [] }]));
   const weeklyHours = subjects.reduce((total, subject) => total + subject.theoryPeriods + subject.labPeriods, 0);
   return { classes, subjects, teachers, staff: Object.values(teachers), labs: subjects.filter(s => s.labPeriods > 0).map(subject => ({ ...subject, subjectId: subject.id, day: subject.labDay || '', startPeriod: subject.labStart, length: subject.labLength || subject.labPeriods })), weeklyHours, metadata: {}, errors: [] };
 }

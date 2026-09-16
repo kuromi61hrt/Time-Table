@@ -3,15 +3,15 @@ import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from timetable.errors import InputError
-from timetable.export import export
-from timetable.input import parse_dataset
-from timetable.scheduler import generate_timetables
+from backend.timetable.errors import InputError
+from backend.timetable.export import export
+from backend.timetable.input import parse_dataset
+from backend.timetable.scheduler import generate_timetables
 
 
 class SchedulerTests(unittest.TestCase):
     def test_empty_dataset_is_valid_and_complete(self):
-        raw = json.loads(Path("examples/empty-input.json").read_text(encoding="utf-8"))
+        raw = json.loads(Path("backend/examples/empty-input.json").read_text(encoding="utf-8"))
         result = generate_timetables(parse_dataset(raw))
         self.assertEqual(result["timetables"], [])
         self.assertTrue(result["report"]["complete"])
@@ -55,7 +55,7 @@ class SchedulerTests(unittest.TestCase):
     def test_export_overwrites_tables_and_removes_stale_variants(self):
         with TemporaryDirectory() as directory:
             output = Path(directory)
-            input_path = Path("examples/ai-ds-ii-i-input.json")
+            input_path = Path("backend/examples/ai-ds-ii-i-input.json")
             export(input_path, output)
             self.assertTrue((output / "timetables.json").exists())
             self.assertTrue((output / "timetable-3.md").exists())
@@ -65,6 +65,27 @@ class SchedulerTests(unittest.TestCase):
             export(input_path, output)
             self.assertFalse(stale.exists())
             self.assertIn("Timetable Alternative 1", (output / "timetable-1.md").read_text(encoding="utf-8"))
+
+    def test_avoids_theory_on_two_period_lab_day_when_possible(self):
+        raw = _dataset(weekly_periods=2)
+        raw["classes"][0]["external_allotments"] = [{
+            "day": "Day-1",
+            "period_numbers": [3, 4],
+            "type": "LAB",
+            "subject_id": "MATH",
+            "staff_id": "S1",
+        }]
+        raw["staff"][0]["external_daily_hours"] = {"Day-1": 2}
+        raw["subjects"][0]["has_lab"] = True
+        result = generate_timetables(parse_dataset(raw))
+        theory_days = {
+            day["day"]
+            for day in result["timetables"][0]["days"]
+            for slot in day["periods"]
+            if slot["slot_type"] == "THEORY"
+        }
+        self.assertNotIn("Day-1", theory_days)
+        self.assertFalse(any(item["rule"] == "LAB_DAY_FALLBACK" for item in result["report"]["warnings"]))
 
 
 def _dataset(weekly_periods: int):

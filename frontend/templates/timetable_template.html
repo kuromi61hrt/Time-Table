@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R P Sarathy Institute of Technology - Time Table</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: white;
+    color: #000;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td,
+th {
+    border: 1px solid #000;
+    padding: 5px;
+    font-size: 13px;
+}
+
+.editable {
+    min-height: 22px;
+    outline: none;
+}
+
+.editable:focus {
+    background: #fffde7;
+}
+
+.logo-section {
+    width: 52%;
+    height: 110px;
+}
+
+.logo-box {
+    width: 115px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.college-info {
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 8px;
+}
+
+.college-name {
+    font-size: 27px;
+    font-weight: bold;
+    line-height: 1.0;
+}
+
+.college-name2 {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.college-name3 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.approval {
+    font-size: 9px;
+    margin-top: 5px;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.label {
+    font-weight: bold;
+    text-align: left;
+}
+
+.value {
+    font-weight: normal;
+}
+
+.section {
+    text-align: center;
+    font-weight: bold;
+}
+
+.time-table {
+    margin-top: 18px;
+}
+
+.time-table th {
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.time-table td {
+    height: 48px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.day {
+    width: 9%;
+    font-weight: bold;
+}
+
+.time {
+    font-weight: bold;
+}
+
+.break {
+    width: 4%;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.vertical {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: bold;
+    font-size: 11px;
+    white-space: nowrap;
+    letter-spacing: 0.18em;
+    line-height: 1.1;
+    display: inline-block;
+}
+
+.subject-table {
+    margin-top: 18px;
+}
+
+.subject-table th {
+    height: 55px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.subject-table td {
+    height: 42px;
+    vertical-align: middle;
+}
+
+.sno {
+    width: 7%;
+    text-align: center;
+}
+
+.acronym {
+    width: 14%;
+}
+
+.code {
+    width: 14%;
+}
+
+.subject-name {
+    width: 27%;
+}
+
+.workload {
+    width: 11%;
+    text-align: center;
+}
+
+.faculty {
+    width: 27%;
+}
+
+.footer {
+    margin-top: 45px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.footer td {
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+button {
+    margin: 15px 5px;
+    padding: 10px 18px;
+    border: 1px solid #000;
+    background: white;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #eeeeee;
+}
+
+@media print {
+
+    body {
+        padding: 0;
+    }
+
+    button {
+        display: none;
+    }
+
+    .editable:focus {
+        background: white;
+    }
+
+    .container {
+        max-width: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ================= HEADER ================= -->
+
+<table>
+
+    <tr>
+
+        <td colspan="2" class="logo-section">
+
+            <table style="border:none; width:100%;">
+
+                <tr>
+
+                    <td class="logo-box" style="border:none;">
+                        <img src="{{ logo_src }}"
+                             class="logo"
+                             alt="RPSIT Logo">
+                    </td>
+
+                    <td class="college-info" style="border:none;">
+
+                        <div class="college-name">
+                            R P Sarathy
+                        </div>
+
+                        <div class="college-name2">
+                            Institute of Technology
+                        </div>
+
+                        <div class="college-name3">
+                            An Autonomous Institution
+                        </div>
+
+                        <div class="approval">
+                            Approved by AICTE | Accredited by NAAC with A+ |
+                            Affiliation in Anna University
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </td>
+
+        <td colspan="2" class="title">
+            TIME TABLE
+        </td>
+
+    </tr>
+
+<!-- ================= DETAILS ================= -->
+
+    <tr>
+
+        <td class="label">
+            Document ID
+        </td>
+
+        <td class="editable value" contenteditable="true">
+            {{ doc_id }}
+        </td>
+
+        <td class="label">
+            Document Name
+        </td>
+
+        <td class="editable value" contenteditable="true">
+            {{ doc_name }}
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td class="label">
+            Programme
+        </td>
+
+        <td class="editable value" contenteditable="true">
+            {{ programme }}
+        </td>
+
+        <td class="label">
+            Year / Sem
+        </td>
+
+        <td class="editable value" contenteditable="true">
+            {{ year_sem }}
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td class="label">
+            Regulation
+        </td>
+
+        <td class="editable value" contenteditable="true">
+            {{ regulation }}
+        </td>
+
+        <td class="label">
+            Odd / Even
+        </td>
+
+        <td class="editable value" contenteditable="true">
+            {{ odd_even }}
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td class="label">
+            Academic Year
+        </td>
+
+        <td class="editable value" contenteditable="true">
+            {{ academic_year }}
+        </td>
+
+        <td class="label">
+            W.e.f
+        </td>
+
+        <td class="editable value" contenteditable="true">
+            {{ wef }}
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td class="label">
+            Class Advisor
+        </td>
+
+        <td class="editable value" contenteditable="true">
+            {{ class_advisor }}
+        </td>
+
+        <td colspan="2" class="section">
+            Section :
+            <span class="editable" contenteditable="true" style="display:inline-block; min-width:50px;">
+                {{ section }}
+            </span>
+        </td>
+
+    </tr>
+
+</table>
+
+
+<!-- ================= TIME TABLE ================= -->
+
+<table class="time-table">
+
+    <tr>
+
+        <th class="day">
+            DAY /<br>HOURS
+        </th>
+
+        <th class="time">
+            09.05 am<br>
+            to<br>
+            10.00 am
+        </th>
+
+        <th class="time">
+            10.00 am<br>
+            to<br>
+            11.00 am
+        </th>
+
+        <th class="break">
+            <div class="vertical">BREAK</div>
+        </th>
+
+        <th class="time">
+            11.15 am<br>
+            to<br>
+            12.15 pm
+        </th>
+
+        <th class="time">
+            12.15 pm<br>
+            to<br>
+            01.00 pm
+        </th>
+
+        <th class="break">
+            <div class="vertical">LUNCH BREAK</div>
+        </th>
+
+        <th class="time">
+            01.40 pm<br>
+            to<br>
+            02.20 pm
+        </th>
+
+        <th class="time">
+            02.20 pm<br>
+            to<br>
+            03.00 pm
+        </th>
+
+        <th class="break">
+            <div class="vertical">BREAK</div>
+        </th>
+
+        <th class="time">
+            03.10 pm<br>
+            to<br>
+            03.50 pm
+        </th>
+
+        <th class="time">
+            03.50 pm<br>
+            to<br>
+            04.30 pm
+        </th>
+
+    </tr>
+
+{% for day in days %}
+    <tr>
+
+        <td class="day">
+            {{ day.label }}
+        </td>
+
+        <td class="editable" contenteditable="true">{{ day.cells[0] }}</td>
+        <td class="editable" contenteditable="true">{{ day.cells[1] }}</td>
+
+        {% if loop.first %}
+        <td class="break" rowspan="6">
+            <div class="vertical">BREAK</div>
+        </td>
+        {% endif %}
+
+        <td class="editable" contenteditable="true">{{ day.cells[2] }}</td>
+        <td class="editable" contenteditable="true">{{ day.cells[3] }}</td>
+
+        {% if loop.first %}
+        <td class="break" rowspan="6">
+            <div class="vertical">LUNCH BREAK</div>
+        </td>
+        {% endif %}
+
+        <td class="editable" contenteditable="true">{{ day.cells[4] }}</td>
+        <td class="editable" contenteditable="true">{{ day.cells[5] }}</td>
+
+        {% if loop.first %}
+        <td class="break" rowspan="6">
+            <div class="vertical">BREAK</div>
+        </td>
+        {% endif %}
+
+        <td class="editable" contenteditable="true">{{ day.cells[6] }}</td>
+        <td class="editable" contenteditable="true">{{ day.cells[7] }}</td>
+
+    </tr>
+{% endfor %}
+
+</table>
+
+
+<!-- ================= SUBJECT TABLE ================= -->
+
+<table class="subject-table">
+
+    <tr>
+
+        <th class="sno">
+            S.<br>NO
+        </th>
+
+        <th class="acronym">
+            Acronym
+        </th>
+
+        <th class="code">
+            Subject<br>Code
+        </th>
+
+        <th class="subject-name">
+            Subject Name
+        </th>
+
+        <th class="workload">
+            Work<br>load
+        </th>
+
+        <th class="faculty">
+            Faculty Members
+        </th>
+
+    </tr>
+
+{% for subject in subjects %}
+    <tr>
+
+        <td class="sno">{{ subject.sno }}</td>
+
+        <td class="editable" contenteditable="true">{{ subject.acronym }}</td>
+        <td class="editable" contenteditable="true">{{ subject.code }}</td>
+        <td class="editable" contenteditable="true">{{ subject.name }}</td>
+        <td class="editable" contenteditable="true">{{ subject.workload }}</td>
+        <td class="editable" contenteditable="true">{{ subject.teacher }}</td>
+
+    </tr>
+{% endfor %}
+
+</table>
+
+
+<!-- ================= FOOTER ================= -->
+
+<table class="footer">
+
+    <tr>
+
+        <td>
+            TIME TABLE INCHARGE
+        </td>
+
+        <td>
+            HoD
+        </td>
+
+        <td>
+            PRINCIPAL
+        </td>
+
+    </tr>
+
+</table>
+
+
+<!-- ================= BUTTONS ================= -->
+
+<div style="text-align:center;">
+
+    <button onclick="window.print()">
+        Print / Save as PDF
+    </button>
+
+    <button onclick="clearTable()">
+        Clear Editable Fields
+    </button>
+
+</div>
+
+</div>
+
+
+<script>
+
+function clearTable() {
+
+    if (confirm("Clear all entered timetable information?")) {
+
+        document.querySelectorAll(
+            '[contenteditable="true"]'
+        ).forEach(function(element) {
+
+            if (element.innerText.trim() !== "{{ section }}") {
+                element.innerText = "";
+            }
+
+        });
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

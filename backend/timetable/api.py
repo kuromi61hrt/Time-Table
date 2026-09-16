@@ -12,6 +12,9 @@ from .input import parse_dataset
 from .scheduler import generate_timetables
 
 
+_OVERRIDES_DIR = Path(__file__).parents[1] / "overrides"
+
+
 class Handler(BaseHTTPRequestHandler):
     server_version = "TimetableAPI/0.1"
 
@@ -30,7 +33,7 @@ class Handler(BaseHTTPRequestHandler):
             if length > 10_000_000:
                 raise InputError("request body exceeds 10 MB")
             body = json.loads(self.rfile.read(length) or b"{}")
-            dataset = parse_dataset(body, Path.cwd() / "overrides")
+            dataset = parse_dataset(body, _OVERRIDES_DIR)
             response: dict[str, Any] = {"valid": True}
             if self.path == "/generate":
                 options = body.get("generation_options", {})

@@ -4,12 +4,12 @@ Fixed external periods are marked with `*`.
 
 | Day | P1 | P2 | P3 | P4 | P5 | P6 | P7 | P8 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| MON | CS | DRRM | IEV | DLT | DLT* | DLT* | MC* | MC* |
+| MON | DASI | GN | IEV | DRRM | DLT* | DLT* | MC* | MC* |
 | TUE | IEV | DLT | DASI | IP | CD | IAAIR | ISC2* | ISC2* |
-| WED | IEV | LIB* | SDC2* | SDC2* | DASI | IP | CD | IAAIR |
-| THU | DRRM | DLT | IP | DASI | IAAIR | CD | IP* | IP* |
-| FRI | DASI | IP | CD | IAAIR | DASI* | DASI* | CD* | CD* |
-| SAT | GN | PROJ | DLT | IEV | DRRM | DASI | CS | TT |
+| WED | DRRM | LIB* | SDC2* | SDC2* | DASI | IP | CD | IAAIR |
+| THU | CS | IEV | CD | DASI | IAAIR | DLT | IP* | IP* |
+| FRI | TT | DLT | IP | IAAIR | DASI* | DASI* | CD* | CD* |
+| SAT | PROJ | CS | DLT | CD | IP | DASI | IEV | DRRM |
 
 Complete: **true**  
 Unresolved: **0**  

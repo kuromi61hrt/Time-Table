@@ -1,45 +1,21 @@
-# Timetable Backend
+# RPSIT Timetable Studio
 
-Dependency-free Python backend for the timetable generator described in
-`timetable-generator-spec.md`.
+This is a browser-based timetable generator for R P Sarathy Institute of Technology.
 
 ## Run
 
-```powershell
-python -m timetable.api
-```
-
-The API listens on `http://127.0.0.1:8000` by default.
-
-- `GET /health` checks service health.
-- `POST /validate` validates an input dataset.
-- `POST /generate` validates and generates timetables.
-
-Set `generation_options.variant_count` from 1 to 10 to request distinct,
-deterministic timetable alternatives. The default remains one timetable.
-
-Run the empty dataset with:
+Serve this folder with any static web server, then open `index.html`. For example:
 
 ```powershell
-Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8000/generate `
-  -ContentType application/json -InFile examples/empty-input.json
+python -m http.server 4173
 ```
 
-Tests use only the standard library:
+Open `http://localhost:4173` and upload an `.xlsx` workbook. The app supports the canonical fields `Teacher Name`, `Subject Name`, `Subject Code`, `Class Name`, and `Periods Required`, plus the supplied section-marker workbook format where a class label such as `AIDS` precedes the subject table.
+
+Click `Generate`, select a class, and use `Export PDF`. The export uses browser print-to-PDF so the native PDF dialog controls the final save location. The live UI remains logo-free; the RPSIT logo appears only on the print document.
+
+## Tests
 
 ```powershell
-python -m unittest discover -s tests -v
+npm test
 ```
-
-Generate three Markdown tables and the complete JSON result in `generated/`:
-
-```powershell
-python -m timetable.export examples/ai-ds-ii-i-input.json --output generated
-```
-
-Every run overwrites the existing generated files. If fewer variants are
-requested later, stale Markdown alternatives are removed.
-
-Department overrides are loaded from `overrides/<department_id>.json` when
-the request does not contain an inline override. Unknown custom rules are
-reported as input errors rather than silently ignored.

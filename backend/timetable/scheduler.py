@@ -30,6 +30,11 @@ def _schedule_class(
     policy = dataset.overrides[section.department_id]
     periods = {period.period_number: period for period in template.periods if period.type == "TEACHING"}
     external = {(item.day, number): item for item in section.external_allotments for number in item.period_numbers}
+    two_period_lab_days = {
+        (item.subject_id, item.day)
+        for item in section.external_allotments
+        if item.type == "LAB" and item.subject_id is not None and len(item.period_numbers) >= 2
+    }
     open_slots = [(day, number) for day in template.days for number in sorted(periods) if (day, number) not in external and number not in policy.excluded_periods]
     placements: list[Placement] = []
     unresolved: list[dict[str, Any]] = []
@@ -55,10 +60,11 @@ def _schedule_class(
     for requirement in requirements:
         subject = dataset.subjects[requirement.subject_id]
         for occurrence in range(requirement.weekly_theory_periods):
-            candidates: list[tuple[tuple[Any, ...], str, int, str, bool]] = []
+            candidates: list[tuple[tuple[Any, ...], str, int, str, bool, bool]] = []
             for day, number in open_slots:
                 same_day_count = subject_days[(subject.id, day)]
                 fallback = same_day_count > 0
+                same_day_as_lab = (subject.id, day) in two_period_lab_days
                 if fallback and (not policy.allow_same_subject_twice_per_day_fallback or same_day_count >= 2):
                     continue
                 if any(item.day == day and item.subject_id == subject.id and _are_adjacent(periods[number], periods[item.period_number]) for item in placements):
@@ -73,6 +79,7 @@ def _schedule_class(
                     period_reuse = subject_periods[subject.id].count(number)
                     score = (
                         fallback,
+                        same_day_as_lab,
                         same_day_count,
                         period_reuse,
                         staff_load[(staff_id, day)],
@@ -80,7 +87,7 @@ def _schedule_class(
                         period_rank[number],
                         staff_id,
                     )
-                    candidates.append((score, day, number, staff_id, fallback))
+                    candidates.append((score, day, number, staff_id, fallback, same_day_as_lab))
             if not candidates:
                 unresolved.append({
                     "class_id": section.id,
@@ -89,7 +96,7 @@ def _schedule_class(
                     "reason": f"No valid slot/staff combination for required occurrence {occurrence + 1} of {requirement.weekly_theory_periods}",
                 })
                 continue
-            _, day, number, staff_id, used_fallback = min(candidates, key=lambda item: item[0])
+            _, day, number, staff_id, used_fallback, used_lab_day = min(candidates, key=lambda item: item[0])
             placement = Placement(day, number, subject.id, staff_id)
             placements.append(placement)
             open_slots.remove((day, number))
@@ -100,6 +107,13 @@ def _schedule_class(
                 warnings.append({
                     "class_id": section.id, "subject_id": subject.id, "rule": "R5_FALLBACK",
                     "reason": f"Placed a second non-adjacent theory period on {day} because the configured fallback policy allows it",
+                })
+            if used_lab_day:
+                warnings.append({
+                    "class_id": section.id,
+                    "subject_id": subject.id,
+                    "rule": "LAB_DAY_FALLBACK",
+                    "reason": f"Placed theory on {day}, which also has a two-period {subject.id} lab, because it was the best remaining valid placement",
                 })
     return placements, unresolved, warnings
 

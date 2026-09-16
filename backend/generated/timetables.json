@@ -12,14 +12,14 @@
                 {
                   "period_number": 1,
                   "slot_type": "THEORY",
-                  "subject_id": "CS",
-                  "staff_id": "STF_DIVYAPRIYA"
+                  "subject_id": "DASI",
+                  "staff_id": "STF_PARAMESWARI"
                 },
                 {
                   "period_number": 2,
                   "slot_type": "THEORY",
-                  "subject_id": "DRRM",
-                  "staff_id": "STF_SOUNDARI"
+                  "subject_id": "GN",
+                  "staff_id": "STF_SRIMATHI"
                 },
                 {
                   "period_number": 3,
@@ -30,8 +30,8 @@
                 {
                   "period_number": 4,
                   "slot_type": "THEORY",
-                  "subject_id": "DLT",
-                  "staff_id": "STF_DINESHKUMAR"
+                  "subject_id": "DRRM",
+                  "staff_id": "STF_SOUNDARI"
                 },
                 {
                   "period_number": 5,
@@ -124,8 +124,8 @@
                 {
                   "period_number": 1,
                   "slot_type": "THEORY",
-                  "subject_id": "IEV",
-                  "staff_id": "STF_VETRIVEL"
+                  "subject_id": "DRRM",
+                  "staff_id": "STF_SOUNDARI"
                 },
                 {
                   "period_number": 2,
@@ -180,20 +180,20 @@
                 {
                   "period_number": 1,
                   "slot_type": "THEORY",
-                  "subject_id": "DRRM",
-                  "staff_id": "STF_SOUNDARI"
+                  "subject_id": "CS",
+                  "staff_id": "STF_DIVYAPRIYA"
                 },
                 {
                   "period_number": 2,
                   "slot_type": "THEORY",
-                  "subject_id": "DLT",
-                  "staff_id": "STF_DINESHKUMAR"
+                  "subject_id": "IEV",
+                  "staff_id": "STF_VETRIVEL"
                 },
                 {
                   "period_number": 3,
                   "slot_type": "THEORY",
-                  "subject_id": "IP",
-                  "staff_id": "STF_GOVINDHARAJ"
+                  "subject_id": "CD",
+                  "staff_id": "STF_SRIMATHI"
                 },
                 {
                   "period_number": 4,
@@ -210,8 +210,8 @@
                 {
                   "period_number": 6,
                   "slot_type": "THEORY",
-                  "subject_id": "CD",
-                  "staff_id": "STF_SRIMATHI"
+                  "subject_id": "DLT",
+                  "staff_id": "STF_DINESHKUMAR"
                 },
                 {
                   "period_number": 7,
@@ -235,20 +235,20 @@
                 {
                   "period_number": 1,
                   "slot_type": "THEORY",
-                  "subject_id": "DASI",
-                  "staff_id": "STF_PARAMESWARI"
+                  "subject_id": "TT",
+                  "staff_id": "STF_PUSHPA"
                 },
                 {
                   "period_number": 2,
                   "slot_type": "THEORY",
-                  "subject_id": "IP",
-                  "staff_id": "STF_GOVINDHARAJ"
+                  "subject_id": "DLT",
+                  "staff_id": "STF_DINESHKUMAR"
                 },
                 {
                   "period_number": 3,
                   "slot_type": "THEORY",
-                  "subject_id": "CD",
-                  "staff_id": "STF_SRIMATHI"
+                  "subject_id": "IP",
+                  "staff_id": "STF_GOVINDHARAJ"
                 },
                 {
                   "period_number": 4,
@@ -292,14 +292,14 @@
                 {
                   "period_number": 1,
                   "slot_type": "THEORY",
-                  "subject_id": "GN",
+                  "subject_id": "PROJ",
                   "staff_id": "STF_SRIMATHI"
                 },
                 {
                   "period_number": 2,
                   "slot_type": "THEORY",
-                  "subject_id": "PROJ",
-                  "staff_id": "STF_SRIMATHI"
+                  "subject_id": "CS",
+                  "staff_id": "STF_DIVYAPRIYA"
                 },
                 {
                   "period_number": 3,
@@ -310,14 +310,14 @@
                 {
                   "period_number": 4,
                   "slot_type": "THEORY",
-                  "subject_id": "IEV",
-                  "staff_id": "STF_VETRIVEL"
+                  "subject_id": "CD",
+                  "staff_id": "STF_SRIMATHI"
                 },
                 {
                   "period_number": 5,
                   "slot_type": "THEORY",
-                  "subject_id": "DRRM",
-                  "staff_id": "STF_SOUNDARI"
+                  "subject_id": "IP",
+                  "staff_id": "STF_GOVINDHARAJ"
                 },
                 {
                   "period_number": 6,
@@ -328,14 +328,14 @@
                 {
                   "period_number": 7,
                   "slot_type": "THEORY",
-                  "subject_id": "CS",
-                  "staff_id": "STF_DIVYAPRIYA"
+                  "subject_id": "IEV",
+                  "staff_id": "STF_VETRIVEL"
                 },
                 {
                   "period_number": 8,
                   "slot_type": "THEORY",
-                  "subject_id": "TT",
-                  "staff_id": "STF_PUSHPA"
+                  "subject_id": "DRRM",
+                  "staff_id": "STF_SOUNDARI"
                 }
               ]
             }
@@ -364,26 +364,26 @@
                 {
                   "period_number": 1,
                   "slot_type": "THEORY",
-                  "subject_id": "CS",
-                  "staff_id": "STF_DIVYAPRIYA"
-                },
-                {
-                  "period_number": 2,
-                  "slot_type": "THEORY",
                   "subject_id": "DASI",
                   "staff_id": "STF_PARAMESWARI"
                 },
                 {
+                  "period_number": 2,
+                  "slot_type": "THEORY",
+                  "subject_id": "IP",
+                  "staff_id": "STF_GOVINDHARAJ"
+                },
+                {
                   "period_number": 3,
                   "slot_type": "THEORY",
-                  "subject_id": "DRRM",
-                  "staff_id": "STF_SOUNDARI"
+                  "subject_id": "CD",
+                  "staff_id": "STF_SRIMATHI"
                 },
                 {
                   "period_number": 4,
                   "slot_type": "THEORY",
-                  "subject_id": "DLT",
-                  "staff_id": "STF_DINESHKUMAR"
+                  "subject_id": "TT",
+                  "staff_id": "STF_PUSHPA"
                 },
                 {
                   "period_number": 5,
@@ -421,14 +421,14 @@
                 {
                   "period_number": 1,
                   "slot_type": "THEORY",
-                  "subject_id": "TT",
-                  "staff_id": "STF_PUSHPA"
+                  "subject_id": "CS",
+                  "staff_id": "STF_DIVYAPRIYA"
                 },
                 {
                   "period_number": 2,
                   "slot_type": "THEORY",
-                  "subject_id": "DRRM",
-                  "staff_id": "STF_SOUNDARI"
+                  "subject_id": "DASI",
+                  "staff_id": "STF_PARAMESWARI"
                 },
                 {
                   "period_number": 3,
@@ -451,8 +451,8 @@
                 {
                   "period_number": 6,
                   "slot_type": "THEORY",
-                  "subject_id": "IEV",
-                  "staff_id": "STF_VETRIVEL"
+                  "subject_id": "DRRM",
+                  "staff_id": "STF_SOUNDARI"
                 },
                 {
                   "period_number": 7,
@@ -532,32 +532,32 @@
                 {
                   "period_number": 1,
                   "slot_type": "THEORY",
-                  "subject_id": "CD",
-                  "staff_id": "STF_SRIMATHI"
-                },
-                {
-                  "period_number": 2,
-                  "slot_type": "THEORY",
                   "subject_id": "IAAIR",
                   "staff_id": "STF_ILAMBALAJ"
                 },
                 {
-                  "period_number": 3,
+                  "period_number": 2,
                   "slot_type": "THEORY",
                   "subject_id": "DLT",
                   "staff_id": "STF_DINESHKUMAR"
                 },
                 {
-                  "period_number": 4,
+                  "period_number": 3,
                   "slot_type": "THEORY",
                   "subject_id": "IEV",
                   "staff_id": "STF_VETRIVEL"
                 },
                 {
+                  "period_number": 4,
+                  "slot_type": "THEORY",
+                  "subject_id": "DRRM",
+                  "staff_id": "STF_SOUNDARI"
+                },
+                {
                   "period_number": 5,
                   "slot_type": "THEORY",
-                  "subject_id": "IP",
-                  "staff_id": "STF_GOVINDHARAJ"
+                  "subject_id": "CD",
+                  "staff_id": "STF_SRIMATHI"
                 },
                 {
                   "period_number": 6,
@@ -587,26 +587,26 @@
                 {
                   "period_number": 1,
                   "slot_type": "THEORY",
-                  "subject_id": "DASI",
-                  "staff_id": "STF_PARAMESWARI"
-                },
-                {
-                  "period_number": 2,
-                  "slot_type": "THEORY",
                   "subject_id": "IP",
                   "staff_id": "STF_GOVINDHARAJ"
                 },
                 {
+                  "period_number": 2,
+                  "slot_type": "THEORY",
+                  "subject_id": "IAAIR",
+                  "staff_id": "STF_ILAMBALAJ"
+                },
+                {
                   "period_number": 3,
                   "slot_type": "THEORY",
-                  "subject_id": "CD",
-                  "staff_id": "STF_SRIMATHI"
+                  "subject_id": "DLT",
+                  "staff_id": "STF_DINESHKUMAR"
                 },
                 {
                   "period_number": 4,
                   "slot_type": "THEORY",
-                  "subject_id": "IAAIR",
-                  "staff_id": "STF_ILAMBALAJ"
+                  "subject_id": "IEV",
+                  "staff_id": "STF_VETRIVEL"
                 },
                 {
                   "period_number": 5,
@@ -650,14 +650,14 @@
                 {
                   "period_number": 2,
                   "slot_type": "THEORY",
-                  "subject_id": "DLT",
-                  "staff_id": "STF_DINESHKUMAR"
+                  "subject_id": "IEV",
+                  "staff_id": "STF_VETRIVEL"
                 },
                 {
                   "period_number": 3,
                   "slot_type": "THEORY",
-                  "subject_id": "IEV",
-                  "staff_id": "STF_VETRIVEL"
+                  "subject_id": "IAAIR",
+                  "staff_id": "STF_ILAMBALAJ"
                 },
                 {
                   "period_number": 4,
@@ -668,14 +668,14 @@
                 {
                   "period_number": 5,
                   "slot_type": "THEORY",
-                  "subject_id": "CD",
-                  "staff_id": "STF_SRIMATHI"
+                  "subject_id": "IP",
+                  "staff_id": "STF_GOVINDHARAJ"
                 },
                 {
                   "period_number": 6,
                   "slot_type": "THEORY",
-                  "subject_id": "IAAIR",
-                  "staff_id": "STF_ILAMBALAJ"
+                  "subject_id": "CD",
+                  "staff_id": "STF_SRIMATHI"
                 },
                 {
                   "period_number": 7,
@@ -686,8 +686,8 @@
                 {
                   "period_number": 8,
                   "slot_type": "THEORY",
-                  "subject_id": "IP",
-                  "staff_id": "STF_GOVINDHARAJ"
+                  "subject_id": "DLT",
+                  "staff_id": "STF_DINESHKUMAR"
                 }
               ]
             }
@@ -722,20 +722,20 @@
                 {
                   "period_number": 2,
                   "slot_type": "THEORY",
-                  "subject_id": "IP",
-                  "staff_id": "STF_GOVINDHARAJ"
-                },
-                {
-                  "period_number": 3,
-                  "slot_type": "THEORY",
                   "subject_id": "DASI",
                   "staff_id": "STF_PARAMESWARI"
                 },
                 {
+                  "period_number": 3,
+                  "slot_type": "THEORY",
+                  "subject_id": "IP",
+                  "staff_id": "STF_GOVINDHARAJ"
+                },
+                {
                   "period_number": 4,
                   "slot_type": "THEORY",
-                  "subject_id": "DLT",
-                  "staff_id": "STF_DINESHKUMAR"
+                  "subject_id": "IEV",
+                  "staff_id": "STF_VETRIVEL"
                 },
                 {
                   "period_number": 5,
@@ -779,32 +779,32 @@
                 {
                   "period_number": 2,
                   "slot_type": "THEORY",
-                  "subject_id": "DRRM",
-                  "staff_id": "STF_SOUNDARI"
+                  "subject_id": "CD",
+                  "staff_id": "STF_SRIMATHI"
                 },
                 {
                   "period_number": 3,
-                  "slot_type": "THEORY",
-                  "subject_id": "IP",
-                  "staff_id": "STF_GOVINDHARAJ"
-                },
-                {
-                  "period_number": 4,
                   "slot_type": "THEORY",
                   "subject_id": "DASI",
                   "staff_id": "STF_PARAMESWARI"
                 },
                 {
+                  "period_number": 4,
+                  "slot_type": "THEORY",
+                  "subject_id": "DLT",
+                  "staff_id": "STF_DINESHKUMAR"
+                },
+                {
                   "period_number": 5,
                   "slot_type": "THEORY",
-                  "subject_id": "IEV",
-                  "staff_id": "STF_VETRIVEL"
+                  "subject_id": "IP",
+                  "staff_id": "STF_GOVINDHARAJ"
                 },
                 {
                   "period_number": 6,
                   "slot_type": "THEORY",
-                  "subject_id": "TT",
-                  "staff_id": "STF_PUSHPA"
+                  "subject_id": "CS",
+                  "staff_id": "STF_DIVYAPRIYA"
                 },
                 {
                   "period_number": 7,
@@ -828,8 +828,8 @@
                 {
                   "period_number": 1,
                   "slot_type": "THEORY",
-                  "subject_id": "CS",
-                  "staff_id": "STF_DIVYAPRIYA"
+                  "subject_id": "TT",
+                  "staff_id": "STF_PUSHPA"
                 },
                 {
                   "period_number": 2,
@@ -867,14 +867,14 @@
                 {
                   "period_number": 7,
                   "slot_type": "THEORY",
-                  "subject_id": "IAAIR",
-                  "staff_id": "STF_ILAMBALAJ"
+                  "subject_id": "DRRM",
+                  "staff_id": "STF_SOUNDARI"
                 },
                 {
                   "period_number": 8,
                   "slot_type": "THEORY",
-                  "subject_id": "DRRM",
-                  "staff_id": "STF_SOUNDARI"
+                  "subject_id": "DASI",
+                  "staff_id": "STF_PARAMESWARI"
                 }
               ]
             },
@@ -902,20 +902,20 @@
                 {
                   "period_number": 4,
                   "slot_type": "THEORY",
-                  "subject_id": "IP",
-                  "staff_id": "STF_GOVINDHARAJ"
-                },
-                {
-                  "period_number": 5,
-                  "slot_type": "THEORY",
                   "subject_id": "CD",
                   "staff_id": "STF_SRIMATHI"
                 },
                 {
-                  "period_number": 6,
+                  "period_number": 5,
                   "slot_type": "THEORY",
                   "subject_id": "IAAIR",
                   "staff_id": "STF_ILAMBALAJ"
+                },
+                {
+                  "period_number": 6,
+                  "slot_type": "THEORY",
+                  "subject_id": "DRRM",
+                  "staff_id": "STF_SOUNDARI"
                 },
                 {
                   "period_number": 7,
@@ -945,8 +945,8 @@
                 {
                   "period_number": 2,
                   "slot_type": "THEORY",
-                  "subject_id": "DASI",
-                  "staff_id": "STF_PARAMESWARI"
+                  "subject_id": "IP",
+                  "staff_id": "STF_GOVINDHARAJ"
                 },
                 {
                   "period_number": 3,
@@ -957,8 +957,8 @@
                 {
                   "period_number": 4,
                   "slot_type": "THEORY",
-                  "subject_id": "CD",
-                  "staff_id": "STF_SRIMATHI"
+                  "subject_id": "IAAIR",
+                  "staff_id": "STF_ILAMBALAJ"
                 },
                 {
                   "period_number": 5,
@@ -1014,20 +1014,20 @@
                 {
                   "period_number": 4,
                   "slot_type": "THEORY",
-                  "subject_id": "IAAIR",
-                  "staff_id": "STF_ILAMBALAJ"
-                },
-                {
-                  "period_number": 5,
-                  "slot_type": "THEORY",
                   "subject_id": "DRRM",
                   "staff_id": "STF_SOUNDARI"
                 },
                 {
-                  "period_number": 6,
+                  "period_number": 5,
                   "slot_type": "THEORY",
                   "subject_id": "CS",
                   "staff_id": "STF_DIVYAPRIYA"
+                },
+                {
+                  "period_number": 6,
+                  "slot_type": "THEORY",
+                  "subject_id": "IAAIR",
+                  "staff_id": "STF_ILAMBALAJ"
                 },
                 {
                   "period_number": 7,
